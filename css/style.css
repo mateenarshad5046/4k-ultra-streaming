@@ -195,6 +195,7 @@ body {
     text-transform: uppercase;
     margin-bottom: 20px;
     display: flex;
+    margin-top: 30px;
     align-items: center;
     gap: 6px;
 }
@@ -216,7 +217,7 @@ body {
     font-weight: 900;
     line-height: 1.1;
     color: var(--text-dark);
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     letter-spacing: -1px;
 }
 
@@ -2613,7 +2614,7 @@ body {
     }
 
     body {
-        padding-top: 65px;
+        padding-top: 60px;
     }
 
     .compact-logo .logo-text {
@@ -2624,3 +2625,113 @@ body {
         text-overflow: ellipsis;
     }
 }
+
+/* 1. Body ki padding ko header ki exact height ke mutabiq set karein */
+body {
+    padding-top: 75px !important; /* Agar zaroorat paray to 75px ko 65px ya 80px kar ke check kar lein */
+}
+
+/* 2. Pehle section ke oopar se extra margin/padding khatam karein */
+main, 
+.hero, 
+.hero-section, 
+.main-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Mobile screens ke liye padding mazeed kam karein */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 65px !important;
+    }
+}
+
+/* 📱 MOBILE SCREENS KE LIYE (Button ko full width aur wazeh karna) */
+@media screen and (max-width: 768px) {
+    .claim-trial-btn {
+        display: block !important;       /* Button ko nayi line par layega */
+        width: 100% !important;          /* Screen ki poori chaurai (width) lega */
+        text-align: center !important;   /* Text ko center karega */
+        padding: 16px 20px !important;   /* Button ko thoda mota (thick) karega */
+        font-size: 18px !important;      /* Inline style ko maintain rakhne ke liye */
+        margin-top:px !important;     /* Upar wale text se fasla */
+        margin-bottom: 1px !important;  /* Neeche 'Languages' button se takrane se bachayega */
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* 📱 MOBILE SCREENS KE LIYE (4 Cards ko ek sath fit karne ka code) */
+@media screen and (max-width: 768px) {
+    /* Grid ko 2 columns mein tabdeel karna */
+    .pricing-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Ek line mein 2 cards */
+        gap: 8px !important; /* Cards ke darmiyan fasla thoda kam kar diya */
+        padding: 0 5px;
+    }
+
+    /* Card ki padding aur width choti karna */
+    .pricing-card {
+        padding: 12px !important;
+        box-sizing: border-box;
+    }
+
+    /* Fonts ko screen ke hisaab se adjust karna taake bahar na nikle */
+    .plan-header .plan-name {
+        font-size: 15px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .plan-duration {
+        font-size: 10px !important;
+    }
+
+    .plan-price-area .price-main {
+        font-size: 22px !important; /* Price thodi choti ki */
+    }
+
+    .plan-price-area .price-sub {
+        font-size: 9px !important;
+    }
+
+    /* Description ko thoda compact karna */
+    .plan-desc {
+        font-size: 10px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Features list ki spacing aur size */
+    .plan-features {
+        margin-bottom: 12px !important;
+    }
+
+    .plan-features li {
+        font-size: 9px !important;
+        margin-bottom: 4px !important;
+    }
+
+    /* Button ko fit karna */
+    .plan-btn {
+        font-size: 11px !important;
+        padding: 8px 5px !important;
+        width: 100% !important;
+        text-align: center;
+    }
+}
+
+/* Aur bhi choti screens (< 400px) ke liye text aur adjust karna */
+@media screen and (max-width: 400px) {
+    .pricing-grid {
+        gap: 5px !important;
+    }
+    .pricing-card {
+        padding: 10px !important;
+    }
+    .plan-price-area .price-main {
+        font-size: 18px !important;
+    }
+}
+

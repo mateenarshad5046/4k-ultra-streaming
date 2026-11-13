@@ -2396,3 +2396,117 @@ body {
 body {
     padding-top: 105px; /* Top bar + Main header ki total height */
 }
+
+
+/* --- Default Desktop Styles --- */
+.top-announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1002;
+    background-color: #0b0b0d;
+    color: #d1d5db;
+    font-size: 13px;
+    padding: 7px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    font-weight: 500;
+}
+
+.site-header {
+    position: fixed;
+    top: 34px; /* Top bar ki height ke mutabiq */
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background-color: #121215;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 12px 0;
+}
+
+body {
+    padding-top: 95px; /* Content ko header ke neeche rakhne ke liye */
+}
+
+/* --- MOBILE RESPONSIVE FIXES (Screens < 768px) --- */
+@media screen and (max-width: 768px) {
+    /* 1. Top Announcement Bar ko mobile par compact aur clean karna */
+    .top-announcement-bar {
+        font-size: 11px;
+        padding: 5px 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Top bar ko chota karne par header ki position adjust karna */
+    .site-header {
+        top: 28px;
+        padding: 8px 0;
+    }
+
+    body {
+        padding-top: 80px;
+    }
+
+    /* 2. Logo size ko mobile ke mutabiq chota karna */
+    .compact-logo {
+        font-size: 13px;
+        gap: 6px;
+    }
+
+    .logo-icon-badge {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+    }
+
+    /* 3. Live Streaming badge ko mobile par chhupan ya chota karna taake space bache */
+    .live-streaming-badge {
+        display: none; /* Mobile par overlap se bachne ke liye hide kar diya, sirf desktop par dikhega */
+    }
+
+    /* 4. Contact icons aur header actions ki spacing theek karna */
+    .header-actions-right {
+        gap: 8px;
+    }
+
+    .header-icon-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .hamburger-btn {
+        font-size: 18px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        padding: 4px;
+    }
+}
+
+/* Aur choti screens ke liye (Extra small phones < 480px) */
+@media screen and (max-width: 480px) {
+    .top-announcement-bar {
+        display: none; /* Bohat chote phones par top bar hide kar dena sabse behtar hota hai taake poori screen content ke liye mile */
+    }
+
+    .site-header {
+        top: 0; /* Top bar nahi hoga to header bilkul upar fix ho jayega */
+    }
+
+    body {
+        padding-top: 65px;
+    }
+
+    .compact-logo .logo-text {
+        font-size: 12px;
+        max-width: 110px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
